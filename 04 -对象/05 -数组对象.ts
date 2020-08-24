@@ -21,9 +21,21 @@ songs.forEach(function (item, index) {
 // 需求 判断数组nums中是否包含大于10的数字
 let nums: number[] = [1, 12, 9, 8, 6];
 
-nums.forEach(function (item,index) {
+nums.forEach(function (item, index) {
   if (item > 10) {
     console.log(true);
-    break;
   }
 });
+
+// some方法 遍历数组 查找是否有一个满足条件的元素
+// 如果有 就停止循环
+console.log(
+  nums.some(function (num) {
+    if (num > 10) {
+      // 说明已经找到满足条件的元素 通过返回true来停止后续的循环
+      return true;
+    }
+    // 说明没有找到满足条件的元素 通过返回false来继续后面的循环
+    return false;
+  })
+);
